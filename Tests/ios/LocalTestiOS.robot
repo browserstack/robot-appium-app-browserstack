@@ -33,5 +33,3 @@ Validate output
     ${output}=      get text    id=ResultBrowserStackLocal
     run keyword and return if    "${output}"=="Up and running"   TEST STATUS    passed  Test passed!
     run keyword and return    TEST STATUS    failed   Test failed!
-
-

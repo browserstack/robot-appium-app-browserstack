@@ -41,5 +41,3 @@ Validate output
     Should Be True    ${match}
     Run Keyword If    ${match} is True    TEST STATUS    passed  Test results have been validated!
     Run Keyword If    ${match} is False    TEST STATUS    failed    Something went wrong!
-
-
