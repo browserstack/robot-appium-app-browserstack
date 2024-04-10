@@ -125,7 +125,8 @@ Open `Tests/android/LocalTestAndroid.robot`
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
-**3. Configure and run your tests parallely**
+**3. Configure and run your tests in parallel**
+
 To run parallel tests we will be using the Pabot library
 
 Android Test
