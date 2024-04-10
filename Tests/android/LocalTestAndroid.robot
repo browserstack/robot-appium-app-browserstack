@@ -6,7 +6,7 @@ Test Setup    Local Test Setup
 Test Teardown    Local Test Teardown
 
 *** Variables ***
-${APP_ID}=     bs://0942de1383ddabcfcac568f1c8df488687403b52
+${APP_ID}=     bs://<app-id>
 
 *** Test Cases ***
 Test Networking app
