@@ -15,7 +15,19 @@ Test Networking app
 
 *** Keywords ***
 Open app
-    open application    ${REMOTE_URL}    app=${APP_ID}   platformName=android    platformVersion=9.0   deviceName=Google Pixel 3    browserstack.local=true     autoGrantPermissions=true
+    ${options}=    Create Dictionary
+    ...    projectName=First Robot Local project
+    ...    buildName=browserstack-build-1
+    ...    sessionName=BStack local_test
+    ...    local=true
+
+    Open Application    ${REMOTE_URL}
+    ...  platformName=android
+    ...  platformVersion=9.0
+    ...  deviceName=Google Pixel 3
+    ...  app=${APP_ID}
+    ...  bstack:options=${options}
+
     IMPLICIT WAIT    5
 
 Local Test Setup

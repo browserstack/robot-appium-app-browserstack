@@ -11,4 +11,15 @@ Test iOS app
 
 *** Keywords ***
 Open app
-    Open Application    ${REMOTE_URL}   platformName=ios    platformVersion=17.0   deviceName=iPhone 13   app=bs://<app-id>
+    ${options}=    Create Dictionary
+    ...    projectName=First Robot project
+    ...    buildName=browserstack-build-1
+    ...    sessionName=BStack first_test
+
+    Open Application    ${REMOTE_URL}
+    ...  platformName=ios
+    ...  platformVersion=17.0
+    ...  deviceName=iPhone 13
+    ...  app=bs://<app-id>
+    ...  bstack:options=${options}
+    IMPLICIT WAIT    5

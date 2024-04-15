@@ -1,0 +1,200 @@
+<robot generator="Robot 7.0 (Python 3.9.6 on darwin)" generated="2024-04-15T11:59:14.450630" rpa="false" schemaversion="5">
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="LocalTestAndroid">LocalTestAndroid</stat>
+</suite>
+</statistics>
+<suite name="Suites" id="s0"><suite id="s1" name="LocalTestAndroid 11.0, Samsung Galaxy S21" source="/Users/avinash/Browserstack/sample_repos/robot-appium-app-browserstack/Tests/android/LocalTestAndroid.robot">
+<test id="s1-t1" name="Test Networking app" line="12">
+<kw name="Open app" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<msg time="2024-04-15T11:59:15.141985" level="INFO">Completed setup!</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>app=${APP_ID}</arg>
+<arg>platformName=android</arg>
+<arg>platformVersion=9.0</arg>
+<arg>deviceName=Google Pixel 3</arg>
+<arg>browserstack.local=true</arg>
+<arg>autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-04-15T11:59:15.086267" elapsed="20.314581" />
+</kw>
+<kw name="IMPLICIT WAIT" owner="implicit_wait">
+<arg>5</arg>
+<status status="PASS" start="2024-04-15T11:59:35.402039" elapsed="0.203099" />
+</kw>
+<status status="PASS" start="2024-04-15T11:59:15.078973" elapsed="20.526708" />
+</kw>
+<kw name="Test connection">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-04-15T11:59:35.618658" level="INFO">Clicking element 'id=com.example.android.basicnetworking:id/test_action'.</msg>
+<msg time="2024-04-15T11:59:36.748019" level="INFO">criteria is com.example.android.basicnetworking:id/test_action</msg>
+<arg>id=com.example.android.basicnetworking:id/test_action</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-04-15T11:59:35.609308" elapsed="1.138951" />
+</kw>
+<status status="PASS" start="2024-04-15T11:59:35.607003" elapsed="1.141555" />
+</kw>
+<kw name="Validate output">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-15T11:59:41.752739" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-15T11:59:36.751277" elapsed="5.001808" />
+</kw>
+<kw name="Get Webelements" owner="AppiumLibrary">
+<msg time="2024-04-15T11:59:41.978067" level="INFO">${search_results} = [&lt;appium.webdriver.webelement.WebElement (session="b216e5002f763b190d39ab6e90efe53436dc0c1b", element="40da0ec0-be0a-4899-bec0-24b5c5af6457")&gt;, &lt;appium.webdriver.webelement.WebElement (session="b216e5...</msg>
+<var>${search_results}</var>
+<arg>class=android.widget.TextView</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<status status="PASS" start="2024-04-15T11:59:41.753841" elapsed="0.224717" />
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-04-15T11:59:42.224393" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="b216e5002f763b190d39ab6e90efe53436dc0c1b", element="40da0ec0-be0a-4899-bec0-24b5c5af6457")&gt;' text is 'BasicNetworking' </msg>
+<msg time="2024-04-15T11:59:42.224920" level="INFO">${result_text} = BasicNetworking</msg>
+<var>${result_text}</var>
+<arg>${result}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-04-15T11:59:41.982855" elapsed="0.242280" />
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-04-15T11:59:42.228918" level="INFO">${modified_result_text} = BasicNetworking</msg>
+<var>${modified_result_text}</var>
+<arg>${result_text}</arg>
+<arg>\n</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.225847" elapsed="0.003245" />
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.232125" elapsed="0.001459" />
+</kw>
+<msg time="2024-04-15T11:59:42.234167" level="INFO">${match} = False</msg>
+<var>${match}</var>
+<arg>'The active connection is wifi' in '${modified_result_text}'</arg>
+<arg>Set Variable</arg>
+<arg>True</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.229906" elapsed="0.004381" />
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-15T11:59:42.236045" level="INFO">False</msg>
+<arg>${match}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.234865" elapsed="0.001520" />
+</kw>
+<var name="${result}">&lt;appium.webdriver.webelement.WebElement (session="b216e5002f763b190d39ab6e90efe53436dc0c1b", element="40da0ec0-be0a-4899-bec0-24b5c5af6457")&gt;</var>
+<status status="PASS" start="2024-04-15T11:59:41.981517" elapsed="0.255305" />
+</iter>
+<iter>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-04-15T11:59:42.477949" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="b216e5002f763b190d39ab6e90efe53436dc0c1b", element="d3a8fe99-03e6-4135-82d1-96c5ac9caa9f")&gt;' text is 'The active connection is wifi 
+ Up and running' </msg>
+<msg time="2024-04-15T11:59:42.478816" level="INFO">${result_text} = The active connection is wifi 
+ Up and running</msg>
+<var>${result_text}</var>
+<arg>${result}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-04-15T11:59:42.238360" elapsed="0.240588" />
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-04-15T11:59:42.482158" level="INFO">${modified_result_text} = The active connection is wifi  Up and running</msg>
+<var>${modified_result_text}</var>
+<arg>${result_text}</arg>
+<arg>\n</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.479745" elapsed="0.002503" />
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.484764" elapsed="0.000408" />
+</kw>
+<msg time="2024-04-15T11:59:42.485425" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>'The active connection is wifi' in '${modified_result_text}'</arg>
+<arg>Set Variable</arg>
+<arg>True</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>False</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.482952" elapsed="0.002536" />
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-15T11:59:42.486292" level="INFO">True</msg>
+<arg>${match}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.485805" elapsed="0.000591" />
+</kw>
+<var name="${result}">&lt;appium.webdriver.webelement.WebElement (session="b216e5002f763b190d39ab6e90efe53436dc0c1b", element="d3a8fe99-03e6-4135-82d1-96c5ac9caa9f")&gt;</var>
+<status status="PASS" start="2024-04-15T11:59:42.237723" elapsed="0.248781" />
+</iter>
+<var>${result}</var>
+<value>@{search_results}</value>
+<status status="PASS" start="2024-04-15T11:59:41.979613" elapsed="0.507006" />
+</for>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.486901" elapsed="0.000477" />
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="TEST STATUS" owner="mark_test_status">
+<arg>passed</arg>
+<arg>Test results have been validated!</arg>
+<status status="PASS" start="2024-04-15T11:59:42.488800" elapsed="0.492446" />
+</kw>
+<arg>${match} is True</arg>
+<arg>TEST STATUS</arg>
+<arg>passed</arg>
+<arg>Test results have been validated!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.487748" elapsed="0.494127" />
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${match} is False</arg>
+<arg>TEST STATUS</arg>
+<arg>failed</arg>
+<arg>Something went wrong!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.982777" elapsed="0.002178" />
+</kw>
+<status status="PASS" start="2024-04-15T11:59:36.749893" elapsed="6.235827" />
+</kw>
+<kw name="Close app" owner="KeywordsFile" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-04-15T11:59:42.988013" elapsed="0.896275" />
+</kw>
+<status status="PASS" start="2024-04-15T11:59:42.986631" elapsed="0.898566" />
+</kw>
+<status status="PASS" start="2024-04-15T11:59:15.071456" elapsed="28.814038" />
+</test>
+<status status="PASS" start="2024-04-15T11:59:14.473192" elapsed="29.414919" />
+</suite>
+<status status="PASS" start="2024-04-15T11:59:14.473192" elapsed="29.414919" />
+</suite><errors>
+</errors>
+</robot>

@@ -13,4 +13,15 @@ Sample test on Wikipedia apk
 
 *** Keywords ***
 Open app
-    Open Application    ${REMOTE_URL}   platformName=android    platformVersion=11.0   deviceName=Samsung Galaxy S21   app=bs://<app-id>
+    ${options}=    Create Dictionary
+    ...    projectName=First Robot project
+    ...    buildName=browserstack-build-1
+    ...    sessionName=BStack parallel_test
+
+    Open Application    ${REMOTE_URL}
+    ...  platformName=android
+    ...  platformVersion=11.0
+    ...  deviceName=Samsung Galaxy S21
+    ...  app=bs://<app-id>
+    ...  bstack:options=${options}
+    IMPLICIT WAIT    5
