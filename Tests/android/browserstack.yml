@@ -1,0 +1,15 @@
+userName: YOUR_USERNAME
+accessKey: YOUR_ACCESS_KEY
+framework: robot
+app: ./WikipediaSample.apk
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: 12.0
+parallelsPerPlatform: 1 
+browserstackLocal: false
+buildName: BrowserStack Demo Single
+projectName: BrowserStack Sample
+buildIdentifier: ${BUILD_NUMBER}
+debug: true
+networkLogs: true
