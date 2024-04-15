@@ -2,8 +2,8 @@
 Library    AppiumLibrary
 Resource   ../common/KeywordsFile.robot
 Library    String
-Test Setup    Local Test Setup
-Test Teardown    Local Test Teardown
+Test Setup    Open app
+Test Teardown    Close app
 
 *** Variables ***
 ${APP_ID}=     bs://<app-id>
@@ -17,14 +17,6 @@ Test Networking app
 Open app
     open application    ${REMOTE_URL}    app=${APP_ID}   platformName=android    platformVersion=9.0   deviceName=Google Pixel 3    browserstack.local=true     autoGrantPermissions=true
     IMPLICIT WAIT    5
-
-Local Test Setup
-    Start Local testing
-    Open app
-
-Local Test Teardown
-    Close app
-    Stop Local testing
 
 Test connection
     click element    id=com.example.android.basicnetworking:id/test_action
