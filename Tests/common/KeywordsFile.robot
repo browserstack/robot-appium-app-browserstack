@@ -5,9 +5,7 @@ Library  implicit_wait.py
 Library  mark_test_status.py
 
 *** Variables ***
-${username}                  %{BROWSERSTACK_USERNAME}
-${accesskey}                 %{BROWSERSTACK_ACCESS_KEY}
-${REMOTE_URL}                https://${username}:${accesskey}@hub-cloud.browserstack.com/wd/hub
+${REMOTE_URL}                http://127.0.0.1:4723/wd/hub
 
 # Android
 ${SEARCH_ACCESSIBILITY_ID}=  accessibility_id=Search Wikipedia
