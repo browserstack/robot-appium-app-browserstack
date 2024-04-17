@@ -75,7 +75,7 @@ Ensure that @ symbol is prepended to the file path in the above request. Please 
 
 Open `Tests/common/KeywordsFile.robot` file :
 
-- Replace `BROWSERSTACK_USERNAME` & `BROWSERSTACK_ACCESS_KEY` with your BrowserStack access credentials. Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
+- Replace `%{BROWSERSTACK_USERNAME}` & `%{BROWSERSTACK_ACCESS_KEY}` with your BrowserStack access credentials. Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
 
 Open `Tests/android/SingleTestAndroid.robot`
 
