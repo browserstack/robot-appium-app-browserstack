@@ -56,6 +56,8 @@ To install the dependencies, run the following command in project's base directo
 Getting Started with Appium tests in Robot on BrowserStack couldn't be easier!
 
 ### **Run your first test :**
+- Export Browserstack credentials
+`export BROWSERSTACK_USERNAME='username' && export BROWSERSTACK_ACCESS_KEY='accesskey'`
 
 Open `Android` or `iOS` folder :
 
