@@ -72,13 +72,10 @@ Ensure that @ symbol is prepended to the file path in the above request. Please 
 **Note**: If you do not have an .apk or .ipa file and are looking to simply try App Automate, you can download and test using our [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk) or [sample iOS app](https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa).
 
 **2. Configure and run your first test**
-
-Open `Tests/common/KeywordsFile.robot` file :
-
 - export BrowserStack access credentials
   `export BROWSERSTACK_USERNAME=<username> && export BROWSERSTACK_ACCESS_KEY=<accesskey>`
 
-  Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
+  - Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
 
 Open `Tests/android/SingleTestAndroid.robot`
 
