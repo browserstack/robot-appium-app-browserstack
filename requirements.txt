@@ -1,7 +1,7 @@
 Appium-Python-Client==3.2.1
 attrs==23.2.0
 browserstack-local==1.2.7
-certifi==2024.2.2
+certifi==2024.7.4
 decorator==5.1.1
 docutils==0.20.1
 exceptiongroup==1.2.0
