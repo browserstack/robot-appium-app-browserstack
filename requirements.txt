@@ -5,7 +5,7 @@ certifi==2024.2.2
 decorator==5.1.1
 docutils==0.20.1
 exceptiongroup==1.2.0
-h11==0.15.0
+h11==0.16.0
 idna==3.6
 kitchen==1.2.6
 natsort==8.4.0
